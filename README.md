@@ -4,6 +4,14 @@ This Dockerfile generates a minimal image with kubectl and git installed.
 
 This makes it easy to execute `kubectl apply -k` to use [kustomize](https://kubernetes.io/docs/tasks/manage-kubernetes-objects/kustomization/) from a Tekton task, having git is required to clone base templates
 
+## why do I need this?
+
+Without this, you'll get a message something like this:
+
+```
+error: couldn't make loader for https://github.com/me/myrepo/deploy: no 'git' program on path: exec: "git": executable file not found in $P
+```
+
 ## example
 
 ```yaml
